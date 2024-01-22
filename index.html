@@ -867,16 +867,25 @@ document.addEventListener('DOMContentLoaded', function () {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
+   overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 }
 
 .repository a {
     color: #0366d6;
     text-decoration: none;
     font-weight: bold;
+   overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 }
 
 .repository p {
     margin: 5px 0;
+   overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 }
 
 /* Add a scrollbar for smaller screens */
@@ -890,11 +899,7 @@ document.addEventListener('DOMContentLoaded', function () {
         text-overflow: ellipsis;
         white-space: nowrap;
     }
- .name{
-  overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
- }
+
 </style>
 </body>
 
