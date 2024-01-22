@@ -815,13 +815,11 @@ also gained knowledge about DSA.</li>
 
 
 <script>
- document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const repositoriesContainer = document.getElementById('repositories');
+    const githubUsername = 'SamsonPG'; // Replace with your GitHub username
 
-    // Replace 'your-username' with your GitHub username
-    const githubUsername = 'SamsonPG';
-
-    fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`)
+    fetch(`https://api.github.com/users/${githubUsername}/repos`)
         .then(response => response.json())
         .then(repositories => {
             repositories.forEach(repository => {
@@ -840,6 +838,7 @@ also gained knowledge about DSA.</li>
         })
         .catch(error => console.error('Error fetching GitHub repositories:', error));
 });
+
 
 </script>
 <style>
