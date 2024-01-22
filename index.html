@@ -385,7 +385,7 @@ also gained knowledge about DSA.</li>
 
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
-           <a href="https://api.github.com/users/SamsonPG/repos" alt=""></a>
+         <div id="repositories"></div>
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-Designing">Designing</li>
@@ -814,8 +814,60 @@ also gained knowledge about DSA.</li>
   </script>
 
 
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const repositoriesContainer = document.getElementById('repositories');
 
+    // Replace 'your-username' with your GitHub username
+    const githubUsername = 'SamsonPG';
 
+    fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`)
+        .then(response => response.json())
+        .then(repositories => {
+            repositories.forEach(repository => {
+                const repositoryElement = document.createElement('div');
+                repositoryElement.classList.add('repository');
+
+                repositoryElement.innerHTML = `
+                    <a href="${repository.html_url}" target="_blank">${repository.name}</a>
+                    <p>${repository.description || 'No description available'}</p>
+                    <p>Language: ${repository.language || 'Not specified'}</p>
+                    <p>Stars: ${repository.stargazers_count}</p>
+                `;
+
+                repositoriesContainer.appendChild(repositoryElement);
+            });
+        })
+        .catch(error => console.error('Error fetching GitHub repositories:', error));
+});
+
+</script>
+<style>
+ #repositories {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.repository {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.repository a {
+    color: #0366d6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.repository p {
+    margin: 5px 0;
+}
+</style>
 </body>
 
 </html>
