@@ -872,8 +872,7 @@ document.addEventListener('DOMContentLoaded', function () {
     display: flex;
     flex-wrap: wrap;
     max-height: 450px;
-    overflow-y: auto; /* Use vertical scrollbar */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: auto; /* Add scrollbar for smaller screens */
   }
 
   .repository {
@@ -905,7 +904,9 @@ document.addEventListener('DOMContentLoaded', function () {
     white-space: nowrap;
   }
 
+  /* Add a scrollbar for smaller screens */
   .scrollable {
+    overflow-x: auto;
     max-width: 100%;
     white-space: nowrap;
   }
