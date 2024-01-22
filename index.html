@@ -383,13 +383,14 @@ also gained knowledge about DSA.</li>
           <p>Some of the work samples given below. Some projects cant include because of the privacy policy.</p>
         </div>
 ///////////////////////////
-   <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center d-flex">
-         <div id="repositories">
-          
-         </div>
-          </div>
-   </div>
+<div class="row" data-aos="fade-up">
+    <div class="col-lg-12 d-flex justify-content-center">
+        <div id="repositories" class="scrollable">
+            <!-- Repositories will be displayed here -->
+        </div>
+    </div>
+</div>
+
  /////////////////      
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
@@ -850,19 +851,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 <style>
- #repositories {
+#repositories {
     max-width: 800px;
-    margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .repository {
-    margin-bottom: 10px;
+    width: calc(33.33% - 20px); /* Adjust the width as needed */
+    margin: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .repository a {
@@ -873,6 +877,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 .repository p {
     margin: 5px 0;
+}
+
+/* Add a scrollbar for smaller screens */
+.scrollable {
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap;
 }
 </style>
 </body>
