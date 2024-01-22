@@ -864,58 +864,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 <style>
-#repositories {
+  #repositories {
     max-width: 90%;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
- max-height: 450px;
-}
+    max-height: 450px;
+    overflow-x: auto; /* Add scrollbar for smaller screens */
+  }
 
-.repository {
+  .repository {
     width: calc(33.33% - 20px); /* Adjust the width as needed */
     margin: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
-   overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
- max-height: 450px;
-}
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-height: 450px;
+  }
 
-.repository a {
+  .repository a {
     color: #0366d6;
     text-decoration: none;
     font-weight: bold;
-   overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-}
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-.repository p {
+  .repository p {
     margin: 5px 0;
-   overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-}
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-/* Add a scrollbar for smaller screens */
-.scrollable {
+  /* Add a scrollbar for smaller screens */
+  .scrollable {
     overflow-x: auto;
     max-width: 100%;
     white-space: nowrap;
-}
-   .repo-title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+  }
+
+  .repo-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Adjust styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    #repositories {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
     }
 
-
+    .repository {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
 </style>
 </body>
 
