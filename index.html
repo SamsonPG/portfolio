@@ -858,7 +858,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 repositoryElement.innerHTML = `
                     <a href="${repository.html_url}" target="_blank">${repository.name}</a>
-                    <a href="${repository.homepage}" target="_blank">${repository.homepage}</a>
+                    <p><a href="${repository.homepage}" target="_blank">${repository.homepage}</a></p>
                     <p>${repository.description || 'No description available'}</p>
                     <p>Language: ${repository.language || 'Not specified'}</p>
                     <p>Stars: ${repository.stargazers_count}</p>
