@@ -410,7 +410,7 @@ also gained knowledge about DSA.</li>
     <div class="col-lg-12 d-flex justify-content-center">
        <div class="youtube-channel">
         <!-- Paste Your YouTube Channel Embed Code Here -->
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ygXGq0rEGXWToI7R&amp;list=PLNJ73D1Tesoiz0t-jekBE1NN_2leof261" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="youtube-video" src="https://www.youtube-nocookie.com/embed/videoseries?si=ygXGq0rEGXWToI7R&amp;list=PLNJ73D1Tesoiz0t-jekBE1NN_2leof261" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 </div>
@@ -976,6 +976,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 </style>
+ <style>
+  .youtube-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+    overflow: hidden;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ </style>
 </body>
 
 </html>
